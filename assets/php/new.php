@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'active' => false,
                 'password' => null
             ],
-            'public' => true,
+            'public' => false,
             'url' => $url,
             'expires' => $expiryDate,
             'author' => $author,
