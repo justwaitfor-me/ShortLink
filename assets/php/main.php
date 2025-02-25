@@ -1,3 +1,6 @@
+<?php
+include '_cross_validation.php';
+?>
 <!-- filepath: /assets/php/main.php -->
 <?php
 $shortLinks = [];
@@ -80,7 +83,7 @@ if (!isRobot($userAgent)) {
 
                         header("Location: " . $linkData['url']);
                         exit();
-                    } 
+                    }
                     break;
             }
         } else {

@@ -51,6 +51,10 @@ p.lead {
   border-color: #444;
 }
 
+.grecaptcha-badge {
+  visibility: visible;
+}
+
 #loadingSpinner {
   display: none;
   justify-content: center;

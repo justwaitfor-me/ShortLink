@@ -1,3 +1,6 @@
+<?php
+// no cross validation check
+?>
 <!-- filepath: /assets/php/error.php -->
 <main class="container text-center">
     <div class="row">

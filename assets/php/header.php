@@ -1,3 +1,6 @@
+<?php
+include '_cross_validation.php';
+?>
 <!-- filepath: /assets/php/header.php -->
 <header class="navbar navbar-expand-lg navbar-dark bg-dark text-white" id="navbar">
     <div class="container-fluid">

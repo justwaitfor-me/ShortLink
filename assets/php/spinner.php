@@ -1,3 +1,6 @@
+<?php
+include '_cross_validation.php';
+?>
 <!-- filepath: /assets/php/spinner.php -->
 <div id="loadingSpinner">
     <l-hatch size="28" stroke="4" speed="3.5" color="white"></l-hatch>

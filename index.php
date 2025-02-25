@@ -4,6 +4,7 @@ require_once __DIR__ . '/env.php';
 require 'vendor/autoload.php';
 
 session_start();
+$cross_validation_check = true;
 
 $debug = false;
 $details = false;
@@ -74,7 +75,7 @@ include 'assets/php/functions.php';
 </head>
 
 <body class="dark-mode">
-    <?php
+    <?php   
     include 'assets/php/spinner.php';
     include 'assets/php/header.php';
     if (isset($_GET['error_code'])) {
@@ -118,4 +119,4 @@ include 'assets/php/functions.php';
     <script src="assets/js/modal.js"></script>
 </body>
 
-</html>
+</html>     

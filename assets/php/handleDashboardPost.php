@@ -1,4 +1,6 @@
 <?php
+include '_cross_validation.php';
+
 // assets/php/handleDashboardPost.php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     include 'assets/php/reCaptcha.php';

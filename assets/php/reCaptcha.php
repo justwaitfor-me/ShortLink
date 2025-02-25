@@ -1,5 +1,7 @@
 
 <?php
+include '_cross_validation.php';
+
 // Your secret reCAPTCHA key (you can find the key in the Google Admin Panel)
 $secretKey = getenv('GOOGLE_recaptcha_secret');
 
@@ -51,7 +53,7 @@ if (intval($responseKeys["success"]) !== 1) {
     exit;
 } else {
     // Optional: Here you can also check the score of reCAPTCHA v3
-    if (isset($responseKeys['score']) && $responseKeys['score'] < 0.5) {
+    if (isset($responseKeys['score']) && $responseKeys['score'] < 0.4) {
         // Error handling if reCAPTCHA deems the score as unsafe
         $errorCode = 403;
         $errorMessage = "Captchascore too low";

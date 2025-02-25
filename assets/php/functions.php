@@ -1,4 +1,6 @@
 <?php
+// no cross validation check
+
 // Function to generate a unique short link key
 function generateUniqueKey($existingKeys, $customKey = null)
 {

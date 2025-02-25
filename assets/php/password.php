@@ -1,4 +1,6 @@
 <?php
+include '_cross_validation.php';
+
 $valid = false;
 if ($shortLink['protected']['active'] && $shortLink['protected']['password']) {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {

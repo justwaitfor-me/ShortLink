@@ -1,5 +1,7 @@
 <!-- filepath: /assets/php/public.php -->
 <?php
+include '_cross_validation.php';
+
 $jsonFile = ($remoteAddr === '127.0.0.1' || $remoteAddr === '::1') ? 'shortlink-data.json' : '/home/sites/site100035052/web/justwaitforme.de/content/data/json/shortlink-data.json';
 $shortLinks = [];
 

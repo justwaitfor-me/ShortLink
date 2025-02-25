@@ -1,3 +1,6 @@
+<?php
+include '_cross_validation.php';
+?>
 <br>
 <?php if ($debug): ?>
     <div class="alert alert-warning text-left">

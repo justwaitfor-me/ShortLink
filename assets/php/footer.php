@@ -1,3 +1,6 @@
+<?php
+include '_cross_validation.php';
+?>
 <!-- filepath: /assets/php/footer.php -->
 <footer class="navbar fixed-bottom bg-transparent">
     <div class="container-fluid">
