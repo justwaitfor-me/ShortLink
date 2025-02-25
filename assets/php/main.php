@@ -29,57 +29,58 @@ if (!isRobot($userAgent)) {
                         $currentDate = new DateTime();
                         $expiryDate = new DateTime($linkData['expires']);
                         $shortLink = $shortLinks[$request];
+                        $valid = false;
 
                         if (
                             $shortLink['active'] && $currentDate < $expiryDate
                         ) {
                             include 'assets/php/password.php';
+                        } else if ($shortLink['active'] && $currentDate >= $expiryDate) {
+                            $errorCode = 410;
+                            $errorMessage = " Link Expired";
+                            $errorDescription = "The link you are trying to access has expired.";
+                            header("Location: ?error_code=$errorCode&error_message=$errorMessage&error_description=$errorDescription");
                         } else {
                             $errorCode = 404;
-                            $errorMessage = "Page Not Found";
-                            $errorDescription = "The page you are looking for might have been removed or is temporarily unavailable.";
+                            $errorMessage = "Not Found";
+                            $errorDescription = "The short link does not exist.";
                             header("Location: ?error_code=$errorCode&error_message=$errorMessage&error_description=$errorDescription");
-                            exit;
                         }
-
-                        if ($valid) {
-                            $shortLink['clicks'] += +1;
-
-                            if ($shortLink['monitoring']['active']) {
-                                if ($shortLink['monitoring']['email']) {
-                                    $headers = "From: Short Link < ";
-                                    sendEmail(
-                                        $shortLink['monitoring']['email'],
-                                        'Short Link Clicked',
-                                        "Your short link ($key) has been clicked by $remoteAddr.",
-                                        $headers
-                                    );
-                                }
-                                $shortLink['monitoring']['data'][] = [
-                                    'ip' => $remoteAddr,
-                                    'time' => date('Y-m-d H:i:s'),
-                                    'user_agent' => $userAgent,
-                                    'unique_id' => $uid
-                                ];
-                            }
-
-                            $shortLinks[$request] = $shortLink;
-                            saveShortLinkData($jsonFile, $shortLinks);
-
-                            header("Location: " . $linkData['url']);
-                            exit();
-                        }
-                    } else if ($shortLink['active'] && $currentDate >= $expiryDate) {
-                        $errorCode = 410;
-                        $errorMessage = " Link Expired";
-                        $errorDescription = "The link you are trying to access has expired.";
-                        header("Location: ?error_code=$errorCode&error_message=$errorMessage&error_description=$errorDescription");
                     } else {
                         $errorCode = 404;
                         $errorMessage = "Not Found";
                         $errorDescription = "The short link does not exist.";
                         header("Location: ?error_code=$errorCode&error_message=$errorMessage&error_description=$errorDescription");
+                        exit;
                     }
+
+                    if ($valid) {
+                        $shortLink['clicks'] += +1;
+
+                        if ($shortLink['monitoring']['active']) {
+                            if ($shortLink['monitoring']['email']) {
+                                $headers = "From: Short Link < ";
+                                sendEmail(
+                                    $shortLink['monitoring']['email'],
+                                    'Short Link Clicked',
+                                    "Your short link ($request) has been clicked by $remoteAddr.",
+                                    $headers
+                                );
+                            }
+                            $shortLink['monitoring']['data'][] = [
+                                'ip' => $remoteAddr,
+                                'time' => date('Y-m-d H:i:s'),
+                                'user_agent' => $userAgent,
+                                'unique_id' => $_SESSION['uid']
+                            ];
+                        }
+
+                        $shortLinks[$request] = $shortLink;
+                        saveShortLinkData($jsonFile, $shortLinks);
+
+                        header("Location: " . $linkData['url']);
+                        exit();
+                    } 
                     break;
             }
         } else {

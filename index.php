@@ -16,6 +16,12 @@ $remoteAddr = filter_input(INPUT_SERVER, 'REMOTE_ADDR', FILTER_SANITIZE_FULL_SPE
 $parts = explode("/", $request);
 $request = array_pop($parts);
 
+$uid = bin2hex(random_bytes(16));
+
+if (!isset($_SESSION['uid'])) {
+    $_SESSION['uid'] = $uid;
+}
+
 function isRobot($userAgent)
 {
     $bots = [

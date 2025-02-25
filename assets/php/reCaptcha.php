@@ -54,8 +54,8 @@ if (intval($responseKeys["success"]) !== 1) {
     if (isset($responseKeys['score']) && $responseKeys['score'] < 0.5) {
         // Error handling if reCAPTCHA deems the score as unsafe
         $errorCode = 403;
-        $errorMessage = "Forbidden";
-        $errorDescription = "The user behavior is suspicious.";
+        $errorMessage = "Captchascore too low";
+        $errorDescription = "The user behavior is suspicious. Please try again later. " . $responseKeys['score'];
         header("Location: ?error_code=$errorCode&error_message=$errorMessage&error_description=$errorDescription");
         exit;
     }

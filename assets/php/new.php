@@ -7,7 +7,9 @@ $ipAddress = $_SERVER['REMOTE_ADDR'];
 handleRateLimiting($ipAddress, 60, 5);
 
 $uid = bin2hex(random_bytes(16));
-$_SESSION['uid'] = $uid;
+if (!isset($_SESSION['uid'])) {
+    $_SESSION['uid'] = $uid;
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     include 'assets/php/reCaptcha.php';
@@ -39,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'clicks' => 0,
             'monitoring' => [
                 'active' => false,
-                'email' => null, 
+                'email' => null,
                 'data' => []
             ]
         ];
