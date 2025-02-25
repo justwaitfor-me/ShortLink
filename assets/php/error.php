@@ -9,7 +9,7 @@
                 <?php if (!empty($errorDescription)): ?>
                     <p><?php echo htmlspecialchars($errorDescription); ?></p>
                 <?php endif; ?>
-                <small class="text-muted">If you believe this is an error, please contact the webmaster.</small>
+                <small class="text-info">If you believe this is an error, please contact the webmaster.</small>
                 <hr>
                 <a href="https://s.justwaitforme.de/" class="btn btn-primary">Go to Home</a>
             </div>

@@ -91,6 +91,10 @@ include 'assets/php/functions.php';
     } else {
         include 'assets/php/main.php';
     }
+    ?>
+    <br>
+    <br>
+    <?php
     include 'assets/php/footer.php';
     ?>
 
