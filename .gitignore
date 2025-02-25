@@ -35,8 +35,8 @@ Thumbs.db
 coverage/
 
 # Ignore other files
-/.htaccess
-/.short-links.json
-/.short-links-451800-c4a0c125e16d.json
-./env.php
+.htaccess
+short-links.json
+short-links-451800-c4a0c125e16d.json
+env.php
 shortlink-data.json
