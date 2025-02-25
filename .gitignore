@@ -1,0 +1,41 @@
+# Ignore Composer dependencies
+/vendor/
+
+# Ignore node_modules
+/node_modules/
+
+# Ignore log files and databases
+*.log
+*.sql
+*.sqlite
+
+# Ignore environment variables
+.env
+
+# Ignore IDE specific files
+.vscode/
+.idea/
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore compiled files
+*.class
+*.o
+*.so
+
+# Ignore PHPStorm project files
+/.phpstorm.meta.php
+
+# Ignore PHPUnit result cache
+.phpunit.result.cache
+
+# Ignore coverage reports
+coverage/
+
+# Ignore other files
+/.htaccess
+/.short-links.json
+/.short-links-451800-c4a0c125e16d.json
+./env.php

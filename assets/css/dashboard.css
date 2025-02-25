@@ -1,0 +1,12 @@
+.card {
+  margin-top: 20px;
+}
+
+.card-header {
+  background-color: #007bff;
+  color: white;
+}
+
+.form-check-label {
+  margin-left: 5px;
+}

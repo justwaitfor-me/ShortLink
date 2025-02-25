@@ -1,0 +1,63 @@
+footer {
+  background-color: transparent;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem 0;
+}
+footer .container-fluid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .container-fluid .navbar-brand {
+  font-size: 1rem;
+}
+@media (max-width: 768px) {
+  footer .container-fluid .navbar-brand {
+    font-size: 0.875rem;
+  }
+}
+footer .container-fluid a {
+  width: -moz-fit-content;
+  width: fit-content;
+  left: 0;
+}
+footer .container-fluid a:hover {
+  animation: bg-fade 1s infinite;
+  color: black;
+}
+@keyframes bg-fade {
+  0% {
+    background-color: transparent;
+  }
+  14% {
+    background-color: rgba(255, 102, 102, 0.7); /* vibrant pastel red */
+  }
+  28% {
+    background-color: rgba(255, 178, 102, 0.7); /* vibrant pastel orange */
+  }
+  42% {
+    background-color: rgba(255, 255, 102, 0.7); /* vibrant pastel yellow */
+  }
+  57% {
+    background-color: rgba(102, 255, 102, 0.7); /* vibrant pastel green */
+  }
+  71% {
+    background-color: rgba(102, 204, 255, 0.7); /* vibrant pastel blue */
+  }
+  85% {
+    background-color: rgba(178, 102, 255, 0.7); /* vibrant pastel indigo */
+  }
+  100% {
+    background-color: transparent; /* vibrant pastel violet */
+  }
+}
+
+body footer span {
+  color: #333 ;
+}
+
+body.dark-mode footer span {
+  color: #fff !important;
+}/*# sourceMappingURL=footer.css.map */

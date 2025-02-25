@@ -1,0 +1,21 @@
+{
+    "test": {
+        "uid": "c5d73846b668279779af77f9a2273507",
+        "active": true,
+        "protected": {
+            "active": true,
+            "password": "$2y$10$SJ\/.djYRvpWM97A.k6hoiOwDsiPyTaP86p.0CxDUZu5ML162MbGQa"
+        },
+        "public": true,
+        "url": "https:\/\/youtu.be\/z4WrDZrJbF4?si=VCPuvK9dHWuu1zFe",
+        "expires": "9999-12-31",
+        "author": "diego",
+        "created": "2025-02-25",
+        "clicks": 1,
+        "monitoring": {
+            "active": false,
+            "email": null,
+            "data": []
+        }
+    }
+}
