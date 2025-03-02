@@ -22,7 +22,7 @@ if ($shortLink['protected']['active'] && $shortLink['protected']['password']) {
 }
 ?>
 
-<!-- filepath: /assets/php/password.php -->
+<?php if (!$valid): ?>
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
@@ -45,3 +45,4 @@ if ($shortLink['protected']['active'] && $shortLink['protected']['password']) {
         </div>
     </div>
 </div>
+<?php endif; ?>
